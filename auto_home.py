@@ -16,7 +16,7 @@ btns = {
 
 for i in btns:
     GPIO.setup(i,GPIO.OUT)
-    GPIO.output(i,True)
+    GPIO.output(i,False)
 
 @app.route('/')
 def index():
@@ -26,13 +26,13 @@ def index():
 @app.route('/checked/', methods=['POST'])
 def checked():
     btn_id = int(request.form['id'])
-    GPIO.output(btn_id,False)
+    GPIO.output(btn_id,True)
     return btns[btn_id] +" turned on successfully"
 
 @app.route('/unchecked/', methods=['POST'])
 def unchecked():
     btn_id = int(request.form['id'])
-    GPIO.output(btn_id,True)
+    GPIO.output(btn_id,False)
     return btns[btn_id] +" turned off successfully"
 
 try:
@@ -44,4 +44,4 @@ except:
 
 finally:
     for i in btns:
-        GPIO.output(i,True)
+        GPIO.output(i,False)
