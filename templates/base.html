@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    {% endblock head %}
+    <!--
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap2-toggle.min.css') }}"/>
+    -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+</head>
+<body>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+{% block body %}
+{% endblock body %}
+</body>
+</html>

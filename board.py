@@ -1,0 +1,21 @@
+import time
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(7,GPIO.OUT)
+GPIO.setup(11,GPIO.OUT)
+GPIO.setup(13,GPIO.OUT)
+for x in range(0,15):
+  print("Green")
+  GPIO.output(7,True)
+  time.sleep(1)
+  GPIO.output(7,False)
+  print("Yello")
+  GPIO.output(11,True)
+  time.sleep(1)
+  GPIO.output(11,False)
+  print("Red")
+  GPIO.output(13,True)
+  time.sleep(1)
+  GPIO.output(13,False)
+  time.sleep(1)
+GPIO.cleanup()
